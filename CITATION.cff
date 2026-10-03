@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use these letter values, please cite them as below."
+title: "LexiSmash Scoring: letter values and letter sets for 6 languages"
+type: dataset
+authors:
+  - family-names: "Rombaldoni"
+    given-names: "Francesco"
+repository-code: "https://github.com/LexiSmash/LexiSmash_scoring"
+url: "https://lexismash.github.io/LexiSmash_scoring/"
+license: CC0-1.0
+keywords:
+  - scoring
+  - letter values
+  - word game
+  - multilingual
