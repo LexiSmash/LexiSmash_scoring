@@ -41,7 +41,7 @@ The official letter values and letter sets powering [**LexiSmash**](https://lexi
    ```json
    { "lang": "it", "systems": { "scrabble": { "values": { "A": 1, "B": 5, "C": 2 } } } }
    ```
-2. **Systems:** `scrabble` (the official Scrabble values for that language) exists for every language; `frizzy` ("Standard Scarabeo", LexiSmash's own classic system) exists for Italian only. The game's other two systems — *Random* (each drawn letter is worth 1–9 points) and *Custom* (the room's host sets every value) — have no fixed data, so they aren't here.
+2. **Systems:** `scrabble` (the official Scrabble values for that language) exists for every language; frizzy (Standard Scarabeo) follows Scarabeo, the crossword board game long sold in Italy as an alternative to Scrabble, whose letter values were set up differently from Scrabble's on purpose. The game's other two systems — *Random* (each drawn letter is worth 1–9 points) and *Custom* (the room's host sets every value) — have no fixed data, so they aren't here.
 3. **Letter sets:** each `docs/data/alphabets/{lang}.json` file lists the `vocals` and `consonants` the game can draw in that language. A letter can have a value and still never be drawn (for example K, J, W, X, Y in Italian): the Explorer shows those with a dashed outline.
 4. **GitHub Pages:** the whole `docs/` folder is served as-is — no build, no bundler, no dependency — so the Explorer and the raw JSON files are always one click away.
 
