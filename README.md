@@ -85,7 +85,7 @@ Same convention used by the other LexiSmash repositories (`docs/` = public site,
 
 ## 🌍 Where the values come from
 
-The `scrabble` values follow the official Scrabble letter distribution of each language; `frizzy` (Standard Scarabeo) is LexiSmash's own system, designed around how often each letter appears in Italian. Both were entered and checked by hand by [Francesco Rombaldoni](https://github.com/R0mb0) (LexiSmash's creator). This repository exists to keep checking them in the open, with anyone's help. See [docs/data/LICENSES.md](docs/data/LICENSES.md) for details and trademark notes.
+The `scrabble` values follow the official Scrabble letter distribution of each language; `frizzy` (Standard Scarabeo) follows *Scarabeo*, the crossword board game long sold in Italy as an alternative to Scrabble, whose letter values were set up differently from Scrabble's on purpose — it is not a system invented for LexiSmash. Both were entered and checked by hand by [Francesco Rombaldoni](https://github.com/R0mb0) (LexiSmash's creator). This repository exists to keep checking them in the open, with anyone's help. See [docs/data/LICENSES.md](docs/data/LICENSES.md) for details and trademark notes.
 
 ## 🤝 Contributing
 
