@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LexiSmash Letter Scores — Explorer</title>
-<meta name="description" content="Browse the letter values, scoring systems and letter sets used by LexiSmash in 6 languages, and propose a correction in a few clicks.">
+<meta name="description" content="Browse the letter values, scoring systems and letter sets used by LexiSmash in 6 languages, and see where to propose a correction.">
 <meta name="color-scheme" content="light dark">
 <!-- Theme applied before the first paint (no flash): "auto" follows the system. -->
 <script>
@@ -45,17 +45,9 @@
     </section>
 
     <section class="card" aria-labelledby="system-heading">
-        <div class="card-head">
-            <h2 id="system-heading" class="card-title" data-i18n="scoringSystem">Scoring system</h2>
-            <label class="edit-switch">
-                <input type="checkbox" id="edit-mode">
-                <span data-i18n="editMode">✏️ Propose changes</span>
-            </label>
-        </div>
+        <h2 id="system-heading" class="card-title" data-i18n="scoringSystem">Scoring system</h2>
         <div id="system-tabs" class="tabs" role="tablist"></div>
         <p id="system-description" class="muted"></p>
-        <p id="edit-hint" class="edit-hint" hidden data-i18n="editHint">Edit mode: select a letter, then pick its new value. Your changes stay in this page until you send them.</p>
-
         <div class="layout">
             <div id="tier-list" class="tier-list" aria-live="polite"></div>
             <aside id="letter-detail" class="letter-detail" aria-live="polite"></aside>
@@ -76,20 +68,6 @@
             </div>
         </div>
         <p id="never-drawn" class="muted"></p>
-    </section>
-
-    <section class="card" id="proposal-card" aria-labelledby="proposal-heading" hidden>
-        <h2 id="proposal-heading" class="card-title" data-i18n="proposalTitle">Your proposal</h2>
-        <ul id="change-list" class="change-list"></ul>
-        <label class="field-label" for="reason" data-i18n="reasonLabel">Why should these values change?</label>
-        <textarea id="reason" rows="4" data-i18n-placeholder="reasonPlaceholder" placeholder="e.g. the official Spanish Scrabble set gives Ñ 8 points, not 10."></textarea>
-        <div class="actions">
-            <a id="open-issue" class="button primary" target="_blank" rel="noopener noreferrer" data-i18n="openIssue">Open an Issue with these changes</a>
-            <button id="copy-json" class="button" type="button" data-i18n="copyJson">Copy the updated JSON</button>
-            <a id="edit-on-github" class="button" target="_blank" rel="noopener noreferrer" data-i18n="editOnGithub">Edit the file on GitHub (Pull Request)</a>
-            <button id="reset-changes" class="button ghost" type="button" data-i18n="resetChanges">Discard changes</button>
-        </div>
-        <p id="copy-status" class="muted" role="status"></p>
     </section>
 
 </main>

@@ -10,12 +10,9 @@ Thanks for helping keep LexiSmash's letter values right! Here's how to propose a
 - One reason per proposal is better than one huge change mixing unrelated things: easier to review, more likely to be accepted quickly.
 - A **source** (an official tile set, a rulebook, a federation page…) makes a correction much easier to accept.
 
-## The easy way: the Explorer
+## Check first
 
-1. Open the [Explorer](https://lexismash.github.io/LexiSmash_scoring/) and pick the language and scoring system.
-2. Switch on **✏️ Propose changes**, select a letter and pick its new value (repeat for every letter you want to change).
-3. Explain why in the text box.
-4. Click **Open an Issue with these changes**: GitHub opens a new Issue already filled in. Check it and submit.
+The [Explorer](https://lexismash.github.io/LexiSmash_scoring/) shows every value of every language side by side: handy to double-check a letter before opening a Pull Request.
 
 ## Pull Request: change a value
 
@@ -25,8 +22,6 @@ Thanks for helping keep LexiSmash's letter values right! Here's how to propose a
    "Ñ": 8,
    ```
 3. In the Pull Request description, explain **why** (and link a source if you have one).
-
-The Explorer's **Copy the updated JSON** button gives you the whole file with your changes already applied, ready to paste.
 
 ## Pull Request: change which letters can be drawn
 
