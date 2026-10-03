@@ -1,10 +1,16 @@
+<div align="center">
+
 # 🔢 LexiSmash Scoring 🅰️
 
-[![pages-build-deployment](https://github.com/LexiSmash/LexiSmash_scoring/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/LexiSmash/LexiSmash_scoring/actions/workflows/pages/pages-build-deployment) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/LexiSmash/LexiSmash_scoring) [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/LexiSmash/LexiSmash_scoring) [![License](https://img.shields.io/badge/license-CC0%201.0-blue.svg?style=plastic)](LICENSE) [![Donate](https://img.shields.io/badge/PayPal-Donate%20to%20Author-blue.svg)](http://paypal.me/R0mb0)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d12b0ad6e83b4a88b927ba3be4ed93c2)](https://app.codacy.com/gh/LexiSmash/LexiSmash_scoring/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![pages-build-deployment](https://github.com/LexiSmash/LexiSmash_scoring/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/LexiSmash/LexiSmash_scoring/actions/workflows/pages/pages-build-deployment)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/LexiSmash/LexiSmash_scoring) 
+[![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/LexiSmash/LexiSmash_scoring) 
+[![License](https://img.shields.io/badge/license-CC0%201.0-blue.svg?style=plastic)](LICENSE) 
+[![Donate](https://img.shields.io/badge/PayPal-Donate%20to%20Author-blue.svg)](http://paypal.me/R0mb0)
 
 The official letter values and letter sets powering [**LexiSmash**](https://lexismash.it), a multiplayer word party game — **6 languages**, every scoring system with fixed values, plus a standalone browser-based explorer to compare languages and prepare a correction in a few clicks. 🚀
 
-<div align="center">
   <a href="http://paypal.me/R0mb0">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://github.com/R0mb0/Support_the_dev_badge/blob/main/Badge/SVG/Support_the_dev_badge_Dark.svg">
@@ -12,9 +18,11 @@ The official letter values and letter sets powering [**LexiSmash**](https://lexi
       <img alt="Saved you time? Support the dev" src="https://github.com/R0mb0/Support_the_dev_badge/blob/main/Badge/SVG/Support_the_dev_badge_Default.svg">
     </picture>
   </a>
-</div>
+
 
 ## [👉 Click here to open the Explorer! 👈](https://lexismash.github.io/LexiSmash_scoring/)
+
+</div>
 
 ---
 
