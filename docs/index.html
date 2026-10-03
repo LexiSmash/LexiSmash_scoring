@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LexiSmash Letter Scores — Explorer</title>
+<meta name="description" content="Browse the letter values, scoring systems and letter sets used by LexiSmash in 6 languages, and propose a correction in a few clicks.">
+<meta name="color-scheme" content="light dark">
+<!-- Theme applied before the first paint (no flash): "auto" follows the system. -->
+<script>
+    (function () {
+        var pref = 'auto';
+        try { pref = localStorage.getItem('lsx_theme') || 'auto'; } catch (e) {}
+        var dark = pref === 'dark' || (pref === 'auto' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    })();
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="topbar-inner">
+        <div class="brand">
+            <span class="brand-tile" aria-hidden="true">A<sub>1</sub></span>
+            <div>
+                <h1 data-i18n="title">LexiSmash Letter Scores</h1>
+                <p class="subtitle" data-i18n-html="subtitle">The letter values and letter sets behind <a href="https://lexismash.it" target="_blank" rel="noopener noreferrer">LexiSmash</a> — check them, and propose a fix.</p>
+            </div>
+        </div>
+        <div class="controls">
+            <label class="visually-hidden" for="ui-lang" data-i18n="uiLanguage">Site language</label>
+            <select id="ui-lang" class="control-select" aria-describedby="ui-lang-hint"></select>
+            <span id="ui-lang-hint" class="visually-hidden" data-i18n="uiLanguageHint">Automatic at first, from your browser.</span>
+            <button id="theme-toggle" class="control-button" type="button"></button>
+        </div>
+    </div>
+</header>
+
+<main class="page">
+
+    <section class="card" aria-labelledby="game-lang-heading">
+        <h2 id="game-lang-heading" class="card-title" data-i18n="gameLanguage">Game language</h2>
+        <div id="game-lang-tabs" class="tabs" role="tablist"></div>
+    </section>
+
+    <section class="card" aria-labelledby="system-heading">
+        <div class="card-head">
+            <h2 id="system-heading" class="card-title" data-i18n="scoringSystem">Scoring system</h2>
+            <label class="edit-switch">
+                <input type="checkbox" id="edit-mode">
+                <span data-i18n="editMode">✏️ Propose changes</span>
+            </label>
+        </div>
+        <div id="system-tabs" class="tabs" role="tablist"></div>
+        <p id="system-description" class="muted"></p>
+        <p id="edit-hint" class="edit-hint" hidden data-i18n="editHint">Edit mode: select a letter, then pick its new value. Your changes stay in this page until you send them.</p>
+
+        <div class="layout">
+            <div id="tier-list" class="tier-list" aria-live="polite"></div>
+            <aside id="letter-detail" class="letter-detail" aria-live="polite"></aside>
+        </div>
+    </section>
+
+    <section class="card" aria-labelledby="alphabet-heading">
+        <h2 id="alphabet-heading" class="card-title" data-i18n="alphabetTitle">Letters that can be drawn</h2>
+        <p class="muted" data-i18n="alphabetIntro">When a player asks for a vowel or a consonant, the game draws one of these letters at random.</p>
+        <div class="alphabet-grid">
+            <div>
+                <h3 class="small-title" data-i18n="vowels">Vowels</h3>
+                <div id="vowels" class="chips"></div>
+            </div>
+            <div>
+                <h3 class="small-title" data-i18n="consonants">Consonants</h3>
+                <div id="consonants" class="chips"></div>
+            </div>
+        </div>
+        <p id="never-drawn" class="muted"></p>
+    </section>
+
+    <section class="card" id="proposal-card" aria-labelledby="proposal-heading" hidden>
+        <h2 id="proposal-heading" class="card-title" data-i18n="proposalTitle">Your proposal</h2>
+        <ul id="change-list" class="change-list"></ul>
+        <label class="field-label" for="reason" data-i18n="reasonLabel">Why should these values change?</label>
+        <textarea id="reason" rows="4" data-i18n-placeholder="reasonPlaceholder" placeholder="e.g. the official Spanish Scrabble set gives Ñ 8 points, not 10."></textarea>
+        <div class="actions">
+            <a id="open-issue" class="button primary" target="_blank" rel="noopener noreferrer" data-i18n="openIssue">Open an Issue with these changes</a>
+            <button id="copy-json" class="button" type="button" data-i18n="copyJson">Copy the updated JSON</button>
+            <a id="edit-on-github" class="button" target="_blank" rel="noopener noreferrer" data-i18n="editOnGithub">Edit the file on GitHub (Pull Request)</a>
+            <button id="reset-changes" class="button ghost" type="button" data-i18n="resetChanges">Discard changes</button>
+        </div>
+        <p id="copy-status" class="muted" role="status"></p>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p data-i18n-html="footer">Letter values are facts, not code: see <a href="./data/LICENSES.md" target="_blank" rel="noopener noreferrer">LICENSES.md</a>. Want to help? Read <a href="https://github.com/LexiSmash/LexiSmash_scoring/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">how to propose a fix</a>.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

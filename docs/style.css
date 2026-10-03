@@ -1,0 +1,183 @@
+/* =================================================================
+   style.css — LexiSmash Letter Scores Explorer
+   -----------------------------------------------------------------
+   Deliberately NOT the game's look: a calm "ledger" style (paper-like
+   background, teal accent, tabular numbers), with a light and a dark
+   theme. Only the dynamics are shared with the game (value rows with
+   letter tiles); the graphics are original to this explorer.
+   ================================================================= */
+
+:root,
+[data-theme="light"] {
+    --bg: #f8f5ee;
+    --surface: #fffdf8;
+    --surface-2: #f1ece0;
+    --border: #e4dccb;
+    --text: #23211c;
+    --muted: #6d6758;
+    --accent: #0f766e;
+    --accent-soft: #e0f2ef;
+    --accent-contrast: #ffffff;
+    --tile-bg: #fffaf0;
+    --tile-border: #d9cfb8;
+    --danger: #b42318;
+    --changed: #b45309;
+    --shadow: 0 1px 2px rgba(60, 50, 20, 0.06), 0 4px 14px rgba(60, 50, 20, 0.05);
+    --radius: 12px;
+}
+
+[data-theme="dark"] {
+    --bg: #0f1719;
+    --surface: #152124;
+    --surface-2: #1b2a2e;
+    --border: #26383d;
+    --text: #e7efe9;
+    --muted: #93a7a2;
+    --accent: #2dd4bf;
+    --accent-soft: #123a37;
+    --accent-contrast: #062925;
+    --tile-bg: #1f3135;
+    --tile-border: #33494f;
+    --danger: #f97066;
+    --changed: #fbbf24;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration: none; }
+
+.visually-hidden {
+    position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- Top bar ---------- */
+.topbar { background: var(--surface); border-bottom: 1px solid var(--border); }
+.topbar-inner {
+    max-width: 980px; margin: 0 auto; padding: 1.4rem 1.25rem;
+    display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap;
+}
+.brand { display: flex; gap: 0.9rem; align-items: center; }
+.brand-tile {
+    width: 3rem; height: 3rem; border-radius: 10px; display: grid; place-items: center;
+    background: var(--accent); color: var(--accent-contrast); font-weight: 800; font-size: 1.4rem; position: relative;
+}
+.brand-tile sub { position: absolute; right: 6px; bottom: 4px; font-size: 0.6rem; }
+h1 { margin: 0; font-size: 1.45rem; letter-spacing: -0.01em; }
+.subtitle { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.95rem; }
+.controls { display: flex; gap: 0.5rem; align-items: center; }
+.control-select, .control-button {
+    font: inherit; font-size: 0.9rem; color: var(--text); background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: 999px; padding: 0.4rem 0.8rem; cursor: pointer;
+}
+
+/* ---------- Layout ---------- */
+.page { max-width: 980px; margin: 0 auto; padding: 1.4rem 1.25rem 3rem; display: flex; flex-direction: column; gap: 1.1rem; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.2rem 1.25rem; }
+.card-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.card-title { margin: 0 0 0.8rem; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.small-title { margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--muted); }
+.muted { color: var(--muted); font-size: 0.92rem; margin: 0.6rem 0 0; }
+
+/* ---------- Tabs ---------- */
+.tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tab {
+    font: inherit; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+    background: var(--surface-2); color: var(--text); border: 1.5px solid var(--border);
+    border-radius: 10px; padding: 0.5rem 0.9rem; transition: border-color 0.15s, background 0.15s;
+}
+.tab[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+
+/* ---------- Edit switch ---------- */
+.edit-switch { display: inline-flex; gap: 0.45rem; align-items: center; font-weight: 600; font-size: 0.92rem; cursor: pointer; }
+.edit-switch input { width: 1.05rem; height: 1.05rem; accent-color: var(--accent); }
+.edit-hint { margin: 0.6rem 0 0; padding: 0.55rem 0.8rem; border-radius: 8px; background: var(--accent-soft); color: var(--accent); font-size: 0.9rem; }
+
+/* ---------- Value rows ---------- */
+.layout { display: grid; grid-template-columns: 1fr 280px; gap: 1rem; margin-top: 1rem; align-items: start; }
+.tier-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.tier {
+    display: grid; grid-template-columns: 3.2rem 1fr; gap: 0.8rem; align-items: center;
+    padding: 0.55rem 0.7rem; border-radius: 10px; background: var(--surface-2);
+    border: 1px solid var(--border);
+}
+.tier-value {
+    height: 2.6rem; border-radius: 8px; display: grid; place-items: center;
+    font-weight: 800; font-size: 1.15rem; font-variant-numeric: tabular-nums;
+    color: #fff; background: var(--tier-color);
+}
+.chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.chip {
+    font: inherit; font-weight: 700; font-size: 1rem; min-width: 2.2rem; height: 2.2rem; padding: 0 0.45rem;
+    display: inline-grid; place-items: center; cursor: pointer;
+    background: var(--tile-bg); color: var(--text); border: 1px solid var(--tile-border);
+    border-bottom-width: 3px; border-radius: 7px; transition: transform 0.1s, border-color 0.15s;
+}
+.chip:hover { transform: translateY(-1px); }
+.chip.selected { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+.chip.changed { border-color: var(--changed); color: var(--changed); }
+.chip.not-drawable { opacity: 0.55; border-style: dashed; }
+.chip.static { cursor: default; }
+
+/* ---------- Letter detail ---------- */
+.letter-detail {
+    position: sticky; top: 1rem; background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1rem; min-height: 8rem; font-size: 0.92rem;
+}
+.detail-letter { font-size: 2.6rem; font-weight: 800; line-height: 1; }
+.detail-value { font-size: 1rem; margin: 0.3rem 0 0.8rem; }
+.detail-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.detail-table td { padding: 0.25rem 0; border-bottom: 1px solid var(--border); }
+.detail-table td:last-child { text-align: right; font-weight: 700; }
+.value-picker { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.3rem; margin: 0.4rem 0 0.8rem; }
+.value-picker button {
+    font: inherit; font-weight: 700; padding: 0.35rem 0; border-radius: 6px; cursor: pointer;
+    background: var(--surface); color: var(--text); border: 1px solid var(--border);
+}
+.value-picker button.current { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
+
+/* ---------- Alphabet ---------- */
+.alphabet-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-top: 0.8rem; }
+
+/* ---------- Proposal ---------- */
+.change-list { margin: 0 0 1rem; padding-left: 1.1rem; }
+.change-list li { margin: 0.2rem 0; font-variant-numeric: tabular-nums; }
+.field-label { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+textarea {
+    width: 100%; font: inherit; color: var(--text); background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.7rem; resize: vertical;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+.button {
+    font: inherit; font-weight: 600; font-size: 0.92rem; text-decoration: none; cursor: pointer;
+    padding: 0.55rem 0.95rem; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface-2); color: var(--text); display: inline-block;
+}
+.button.primary { background: var(--accent); color: var(--accent-contrast); border-color: var(--accent); }
+.button.ghost { background: transparent; color: var(--danger); border-color: transparent; }
+.button[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+
+.footer { max-width: 980px; margin: 0 auto; padding: 0 1.25rem 2.5rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+@media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; }
+    .letter-detail { position: static; }
+    .alphabet-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}
