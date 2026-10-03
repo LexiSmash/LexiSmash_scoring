@@ -33,7 +33,7 @@ The official letter values and letter sets powering [**LexiSmash**](https://lexi
 - **Light and dark theme**: follows your system automatically, or pick one yourself — the choice is remembered.
 - **Available in 6 languages**: the Explorer speaks your browser's language (Italian, English, French, German, Spanish or Dutch), and you can switch at any time.
 - **Compare at a glance**: select a letter to see what it's worth in every language, and which letters have a value but are never drawn.
-- **Propose a fix without writing JSON**: switch on edit mode, change the values you think are wrong, explain why, and the Explorer opens a ready-made Issue for you — or gives you the updated JSON for a Pull Request.
+- **Open for corrections**: every value can be challenged. Found a wrong value or a letter missing from a language's set? Open a Pull Request — every proposal is reviewed by hand before merging.
 
 ## 🛠️ How it works
 
@@ -41,7 +41,7 @@ The official letter values and letter sets powering [**LexiSmash**](https://lexi
    ```json
    { "lang": "it", "systems": { "scrabble": { "values": { "A": 1, "B": 5, "C": 2 } } } }
    ```
-2. **Systems:** `scrabble` (the official Scrabble values for that language) exists for every language; frizzy (Standard Scarabeo) follows Scarabeo, the crossword board game long sold in Italy as an alternative to Scrabble, whose letter values were set up differently from Scrabble's on purpose. The game's other two systems — *Random* (each drawn letter is worth 1–9 points) and *Custom* (the room's host sets every value) — have no fixed data, so they aren't here.
+2. **Systems:** `scrabble` (the official Scrabble values for that language) exists for every language; `frizzy` ("Standard Scarabeo", the letter values of *Scarabeo*, the Italian word board game) exists for Italian only. The game's other two systems — *Random* (each drawn letter is worth 1–9 points) and *Custom* (the room's Master sets every value) — have no fixed data, so they aren't here.
 3. **Letter sets:** each `docs/data/alphabets/{lang}.json` file lists the `vocals` and `consonants` the game can draw in that language. A letter can have a value and still never be drawn (for example K, J, W, X, Y in Italian): the Explorer shows those with a dashed outline.
 4. **GitHub Pages:** the whole `docs/` folder is served as-is — no build, no bundler, no dependency — so the Explorer and the raw JSON files are always one click away.
 
@@ -89,7 +89,7 @@ The `scrabble` values follow the official Scrabble letter distribution of each l
 
 ## 🤝 Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Short version: use the Explorer's edit mode to open a ready-made Issue, or open a Pull Request that changes one language's JSON file, explaining why (a source is always welcome). Every proposal is reviewed by hand before being merged — don't expect an instant or automatic merge.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Short version: open a Pull Request that changes one language's JSON file, explaining why (a source is always welcome). Every proposal is reviewed by hand before being merged — don't expect an instant or automatic merge.
 
 ## 🔗 Relationship to the game
 
