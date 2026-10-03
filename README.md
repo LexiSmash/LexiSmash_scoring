@@ -4,7 +4,15 @@
 
 The official letter values and letter sets powering [**LexiSmash**](https://lexismash.it), a multiplayer word party game — **6 languages**, every scoring system with fixed values, plus a standalone browser-based explorer to compare languages and prepare a correction in a few clicks. 🚀
 
-[![Saved you time? Support the dev](https://github.com/R0mb0/Support_the_dev_badge/raw/main/Badge/SVG/Support_the_dev_badge_Default.svg)](http://paypal.me/R0mb0)
+<div align="center">
+  <a href="http://paypal.me/R0mb0">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/R0mb0/Support_the_dev_badge/blob/main/Badge/SVG/Support_the_dev_badge_Dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://github.com/R0mb0/Support_the_dev_badge/blob/main/Badge/SVG/Support_the_dev_badge_Light.svg">
+      <img alt="Saved you time? Support the dev" src="https://github.com/R0mb0/Support_the_dev_badge/blob/main/Badge/SVG/Support_the_dev_badge_Default.svg">
+    </picture>
+  </a>
+</div>
 
 ## [👉 Click here to open the Explorer! 👈](https://lexismash.github.io/LexiSmash_scoring/)
 
@@ -84,4 +92,10 @@ This repository is the **editorial source of truth** for the letter values and l
 - **Code** (the standalone Explorer in `docs/`, this README and the other repository documents) is original work released into the public domain under [CC0 1.0 Universal](LICENSE) — use it, modify it, redistribute it, no permission needed.
 - **Data** (the files inside `docs/data/`) are lists of letter values: plain facts, also offered under CC0. *Scrabble* is a trademark of its respective owners; this project is not affiliated with or endorsed by them — see [docs/data/LICENSES.md](docs/data/LICENSES.md).
 
-[![Crafted with AI](https://github.com/R0mb0/Crafted_with_AI/raw/main/Badge/SVG/CraftedWithAIDefault.svg)](https://github.com/R0mb0/Crafted_with_AI)
+<a href="https://github.com/R0mb0/Crafted_with_AI">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://github.com/R0mb0/Crafted_with_AI/blob/main/Badge/SVG/CraftedWithAIDark.svg">
+<source media="(prefers-color-scheme: light)" srcset="https://github.com/R0mb0/Crafted_with_AI/blob/main/Badge/SVG/NotMadeByAILight.svg">
+<img alt="Crafted with AI" src="https://github.com/R0mb0/Crafted_with_AI/blob/main/Badge/SVG/CraftedWithAIDefault.svg">
+</picture>
+</a>
