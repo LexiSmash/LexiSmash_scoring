@@ -1,0 +1,37 @@
+name: "Score correction"
+description: "Propose a different value for one or more letters (or a change to the letters that can be drawn)."
+title: "[Scores] "
+labels: ["score correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! Tip: the [Explorer](https://lexismash.github.io/LexiSmash_scoring/) can fill this in for you (switch on "✏️ Propose changes").
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options: [Italian, English, French, German, Spanish, Dutch]
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: Scoring system
+      options: ["Official Scrabble (scrabble)", "Standard Scarabeo (frizzy, Italian only)", "Letters that can be drawn (alphabet)"]
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: Proposed changes
+      description: "One per line, e.g. Ñ: 10 → 8"
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why
+      description: "Explain the reason; a link to a source helps a lot."
+    validations:
+      required: true
